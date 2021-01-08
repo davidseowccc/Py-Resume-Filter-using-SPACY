@@ -18,5 +18,5 @@ The Python code, using PyPDF2 and SPACY PyPI, mines text from pdf documents usin
 
 
 ##### References
-1. https://towardsdatascience.com/do-the-keywords-in-your-resume-aptly-represent-what-type-of-data-scientist-you-are-59134105ba0d
-2. https://towardsdatascience.com/resume-screening-with-python-1dea360be49b
+### 1. https://towardsdatascience.com/do-the-keywords-in-your-resume-aptly-represent-what-type-of-data-scientist-you-are-59134105ba0d
+### 2. https://towardsdatascience.com/resume-screening-with-python-1dea360be49b
