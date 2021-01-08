@@ -11,7 +11,7 @@ The Python code, using PyPDF2 and SPACY PyPI, mines text from pdf documents usin
 #
 #
 ### How it works
-1. Setup criterion and table of key words 
+1. Setup criterion and table of key words (set up a database using a .csv file)
 2. Automatically reads resumes using PyPDF2 (you could use other libraries e.g. PDFminer.
 3. Categorise Phrase/Text(s) according to the criterion and count for each applicant
 4. Display Data Visualisation and Export processed data for downstream processing
