@@ -38,8 +38,11 @@ def create_profile(file):
     text = str(text)
     text = text.replace("\\n", "")
     text = text.lower()
+    
     #below is the csv where we have all the keywords, you can customize your own
-    keyword_dict = pd.read_csv('/home/usr/Resume/template/template.csv', encoding='ISO-8859-1') # add drive if using windows
+    keyword_dict = pd.read_csv('/home/usr/Resume/template/template.csv', encoding='ISO-8859-1') 
+    # add drive if using windows. remove encoding if your data are in UTF-8 standard.
+    
     math_words = [nlp(text) for text in keyword_dict['Math'].dropna(axis = 0)]
     eng_words = [nlp(text) for text in keyword_dict['Engineering'].dropna(axis = 0)]
     prog_words = [nlp(text) for text in keyword_dict['Program'].dropna(axis = 0)]
