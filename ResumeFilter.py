@@ -1,8 +1,6 @@
 #Resume Filter code
 
-
 #importing all required libraries
-
 import PyPDF2
 import os
 from os import listdir
@@ -15,7 +13,8 @@ nlp = en_core_web_sm.load()
 from spacy.matcher import PhraseMatcher
 
 #Function to read resumes from the folder one by one
-mypath="/home/david/01_PYcode/Python codes/PyCodes_David/Phrase Catcher/NLP_Resume/EAEapp" #enter your path here where you saved the resumes
+mypath="/home/usr/Resume/app"      #enter your path here where you saved the resumes in Linux
+# mypath="c:/home/usr/Resume/app"  #use for windows, repeat for line
 onlyfiles = [os.path.join(mypath, f) for f in os.listdir(mypath) if os.path.isfile(os.path.join(mypath, f))]
 
 def pdfextract(file):
@@ -30,7 +29,6 @@ def pdfextract(file):
         print (t)
         text.append(t)
     return text
-
 #function to read resume ends
 
 
@@ -41,7 +39,7 @@ def create_profile(file):
     text = text.replace("\\n", "")
     text = text.lower()
     #below is the csv where we have all the keywords, you can customize your own
-    keyword_dict = pd.read_csv('/home/david/01_PYcode/Python codes/PyCodes_David/Phrase Catcher/NLP_Resume/template/template.csv', encoding='ISO-8859-1')
+    keyword_dict = pd.read_csv('/home/usr/Resume/template/template.csv', encoding='ISO-8859-1') # add drive if using windows
     math_words = [nlp(text) for text in keyword_dict['Math'].dropna(axis = 0)]
     eng_words = [nlp(text) for text in keyword_dict['Engineering'].dropna(axis = 0)]
     prog_words = [nlp(text) for text in keyword_dict['Program'].dropna(axis = 0)]
@@ -84,11 +82,10 @@ def create_profile(file):
     dataf['Candidate Name'].fillna(dataf['Candidate Name'].iloc[0], inplace = True)
 
     return(dataf)
-        
 #function ends
         
-#code to execute/call the above functions
 
+#code to execute/call the above functions
 final_database=pd.DataFrame()
 i = 0 
 while i < len(onlyfiles):
@@ -98,18 +95,19 @@ while i < len(onlyfiles):
     i +=1
     print(final_database)
 
-    
-#code to count words under each category and visulaize it through Matplotlib
-
+#code to count words under each category
 final_database2 = final_database['Keyword'].groupby([final_database['Candidate Name'], final_database['Subject']]).count().unstack()
 final_database2.reset_index(inplace = True)
 final_database2.fillna(0,inplace=True)
 new_data = final_database2.iloc[:,1:]
 new_data.index = final_database2['Candidate Name']
-#execute the below line if you want to see the candidate profile in a csv format
 
-sample2=new_data.to_csv('/home/david/01_PYcode/Python codes/PyCodes_David/Phrase Catcher/NLP_Resume/template/EAEselect.csv')
 
+#code to see the candidate profile in a csv format
+sample2=new_data.to_csv('/home/usr/Resume/template/scoring.csv')    # add drv if windows
+
+
+#code to visulaize it through Matplotlib
 import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 10})
 ax = new_data.plot.barh(title="EAE_AEG keywords by category", legend=False, figsize=(25,7), stacked=True)
