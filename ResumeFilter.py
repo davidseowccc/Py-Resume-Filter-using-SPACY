@@ -1,3 +1,5 @@
+# This set of codes are deprecated due to changes in pandas and spacy.
+# Pls refer to the next set.
 #Resume Filter code
 
 #importing all required libraries
