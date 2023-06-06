@@ -1,9 +1,12 @@
 # Resume-Filter-using-SPACY
 Resume Filter using PyPDF2 and SPACY
 
-python -m spacy download en_core_web_sm
+### Trouble-shooting
+1. To install en_core_web_sm in spacy
+$ python -m spacy download en_core_web_sm
 
-pip install pyqt5
+2. To a GUI backend for python3
+$ pip install pyqt5
 (UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.)
 #
 #
