@@ -11,7 +11,7 @@ Resume Filter using PyPDF2 and SPACY
   $ pip install pyqt5
   
   (UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.)
-#
+
 #
 ### Introduction
 Resumes of Job and Study applications can become an enourmous chore of work and labourious for HR and admission/application officers to scan through without any lapse in attention and human fatique. This project makes use of programming automation to extract and read resumes with the intent of scoring and filtering applications for downstream selections. This app might be used with other HR and selection assessments.
