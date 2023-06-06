@@ -7,7 +7,7 @@ $ python -m spacy download en_core_web_sm
 
 2. To a GUI backend for python3
 $ pip install pyqt5
-##### (UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.)
+(UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.)
 #
 #
 ### Introduction
