@@ -3,7 +3,7 @@ Resume Filter using PyPDF2 and SPACY
 
 ### Trouble-shooting
 1. To install en_core_web_sm in spacy
-#
+
 $ python -m spacy download en_core_web_sm
 
 2. To a GUI backend for python3
