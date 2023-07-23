@@ -1,5 +1,7 @@
 # Resume-Filter-using-SPACY
 Resume Filter using PyPDF2 and SPACY
+1. Resumefilter.py is based on older python version (around python 3.8 and associated pypdf2 library)
+2. The other python scripts have been updated with python 3.11 and the associated pypdf2 library.
 
 #
 ### Trouble-shooting
